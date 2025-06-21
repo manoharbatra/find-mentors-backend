@@ -5,7 +5,7 @@ const Mentor = require("../models/Mentor");
 router.post("/", async (req, res) => {
   try {
     console.log(req.body);
-    const mentor = new Mentor(req.body);
+    const mentor = new Mentor({ ...req.body, active: false });
     await mentor.save();
     res.status(201).json({ message: "Mentor saved successfully", mentor });
   } catch (err) {
