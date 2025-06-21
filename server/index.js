@@ -20,10 +20,7 @@ mongoose.connection.on("error", (err) =>
   console.error("❌ MongoDB connection error:", err)
 );
 
-const allowedOrigins = [
-  "https://mb-mentors.netlify.app",
-  "http://localhost:3000",
-];
+const allowedOrigins = ["https://mb-mentors.netlify.app"];
 
 app.use(
   cors({
