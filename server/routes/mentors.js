@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Mentor = require("../models/Mentor");
 
-// POST /api/mentors - Add a new mentor
 router.post("/", async (req, res) => {
   try {
     console.log(req.body);
@@ -15,7 +14,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// GET /api/mentors - Get all mentors
 router.get("/", async (req, res) => {
   try {
     const mentors = await Mentor.find();
